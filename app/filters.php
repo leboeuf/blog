@@ -22,6 +22,11 @@ App::after(function($request, $response)
 	//
 });
 
+App::missing(function($exception)
+{
+    return Response::view('404', [], 404);
+});
+
 /*
 |--------------------------------------------------------------------------
 | Authentication Filters

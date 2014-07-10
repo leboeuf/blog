@@ -17,6 +17,8 @@ class BlogController extends BaseController {
 
 		if (in_array($file, $posts))
 			$post = file_get_contents("$posts_path/$file");
+		else
+			App::abort(404);
 
 		return View::make('post')->with(['post' => $post]);
 	}
